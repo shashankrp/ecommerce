@@ -1,0 +1,12 @@
+To take the input from the users 
+
+add this form in your template
+
+<form method="post">
+    {% csrf_token %}
+    Name: <input type="text" name="name"/>
+    <button type="submit">Submit</button>
+</form>
+
+then you could extract the input 
+    data = request.POST.get('name')
