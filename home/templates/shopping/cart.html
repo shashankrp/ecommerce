@@ -1,0 +1,29 @@
+{% include "../header_footers/headers.html" %}
+{% include "../homepage/navbar.html" %}
+<h2 class="text-center mt-3">Cart Details</h2>
+<div style="margin-top: 5%;padding-bottom:15%">
+  {% for cart in cartInfo %}
+    <div class="card-group">
+        <div class="card">
+          <img src="..." class="card-img-top" alt="...">
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{cart.name}}</h5>
+        </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{cart.price}}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      
+      <div class="d-flex">
+        <h5 class="card-title">Total:{{total}}</h5>
+        
+    </div>
+    <button class="w-100 text-end" style="margin-top: 10%">Checkout</button>
+    {% include "../header_footers/footer.html" %}
+</div>

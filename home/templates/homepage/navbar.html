@@ -1,0 +1,55 @@
+<html lang="en">
+  {% load static %}  
+  <script src="{% static 'js/myscrypts.js' %}" type="text/javascript"></script> 
+  <body>
+    <nav class="navbar bg-body-tertiary bg-dark navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand mx-0" onclick="goHome()" style="cursor: pointer;">Super Market</a>
+          <div class="d-flex text-light mt-2" id="navigation">
+                <div class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill mt-3" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg><p class="mt-1 mx-2">Bangalore, Karnataka,<br/>India</p></div>
+          </div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 input-sm" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="lang" onmouseover=document.getElementById('lang').click();>
+              EN
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">EN</a></li>
+              <li><a class="dropdown-item" href="#">HI</a></li>
+              <li><a class="dropdown-item" href="#">KA</a></li>
+            </ul>
+          </div>
+          
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="hello" onmouseover=document.getElementById('hello').click();>
+              <small class="text-left">Hello, signin</small><br/> Account & List
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" onclick="navBar('Signup')">Sign Up</a></li>
+              <li><a class="dropdown-item" onclick="navBar('SignIn')">Sign In</a></li>
+              {% comment %} <li><a class="dropdown-item" onclick="navBar('Signup')">Something else here</a></li> {% endcomment %}
+            </ul>
+          </div>
+          <button class="btn btn-secondary bg-transparent border-0" type="button" data-bs-toggle="" aria-expanded="false" onclick="navBar('Return')">
+            <small>Returns</small><br/> & Orders
+          </button>
+          
+          <div class="d-flex flex-row mt-1 mx-2">
+              <div class=" mb-auto rounded-top">
+                <p class="text-danger fw-bold bg-dark px-0" style="position: absolute; background-color: yellow">{{items}}</p>
+                <a onclick="navBar('Cart')">   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bag text-light" viewBox="0 0 16 16">
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+              </svg></a>
+            </div>
+          <p class="text-white fs-5 mt-1" onclick="navBar('Cart')">Cart</p>
+        </div>
+        
+        </div>
+      </nav>
+  </body>
+</html>

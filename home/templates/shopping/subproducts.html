@@ -1,0 +1,21 @@
+{% include "../header_footers/headers.html" %}
+{% include "../homepage/navbar.html" %}
+{% load static %} 
+<script src="{% static 'js/myscrypts.js' %}" type="text/javascript"></script> 
+
+<div class="h-100">
+    <h2 class="text-center">{{name}}</h2>
+    <div class="row row-cols-1 row-cols-md-4 g-4" style="margin-top:1%; padding: 0 2% 0 2%">
+    {% for product in products %}
+        <div class="col" onclick="subsubProd('{{product}}')">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product}}</h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% include "../header_footers/footer.html" %}
